@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Libraries\Helper;
+use Barryvdh\Debugbar\Facades\Debugbar;
+
 class Home extends Controller
 {
     public function index()
     {
-        return $this->view('home.main');
-    }
+        Debugbar::info(Helper::submission());
 
-    public function trial()
-    {
-        $data = [
-            'title' => 'Kejadian Risiko Operasional'
-        ];
-        $this->plugin->set('scrollbar');
-        return $this->view('layout.admin', $data);
+        return $this->view('login.main', ['title' => 'Login']);
     }
 }

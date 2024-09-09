@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Libraries\Helper;
 use App\Http\Support\Service;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Support\Facades\View;
 
 abstract class Controller
@@ -28,11 +29,11 @@ abstract class Controller
     {
         $newLineRemove = env('APP_ENV') == 'production';
 
-        $webView = View::make($view, $data, [
+        $data['getPlugins'] = $this->plugin->get();
 
-            'getPlugins' => $this->plugin->get()
+        $webView = View::make($view, $data)->render();
 
-        ])->render();
+        Debugbar::info($data);
 
         return $newLineRemove ? Helper::GapReplace($webView) : $webView;
     }

@@ -15,4 +15,16 @@ class Helper
         $result = preg_replace('/\s+/', $replace, '' . $text);
         return trim($result);
     }
+
+    public static function submission()
+    {
+        $path = resource_path('json/submission.json');
+
+        if (!file_exists($path)) return null;
+
+        return json_decode(
+            file_get_contents($path),
+            true
+        );
+    }
 };

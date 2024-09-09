@@ -25,15 +25,15 @@
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <li class="nav-item">
-                    <a href="/dashboard" class="nav-link">
+                    <a href="/operational-risk" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Dashboard</p>
+                        <p>Risiko Operasional</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/setting" class="nav-link">
+                    <a href="/damage-loss" class="nav-link">
                         <i class="nav-icon fas fa-cog"></i>
-                        <p>Settings</p>
+                        <p>Kerugian</p>
                     </a>
                 </li>
             </ul>
