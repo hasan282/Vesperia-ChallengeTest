@@ -10,10 +10,11 @@ Route::get(
     [Home::class, 'index']
 );
 
-Route::get(
-    '/operational-risk',
-    [OperationalRisk::class, 'index']
-);
+Route::controller(OperationalRisk::class)->group(function () {
+
+    Route::get('/operational-risk', 'index');
+    Route::get('/operational-risk/add', 'add');
+});
 
 Route::get(
     '/damage-loss',
